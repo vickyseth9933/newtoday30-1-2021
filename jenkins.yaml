@@ -1,0 +1,4 @@
+aws ec2 create-launch-template \
+    --launch-template-name Jenkins.$BUILD_ID$JOB_NAME   \
+    --version-description $BUILD_NUMBER  \
+    --launch-template-data '{"NetworkInterfaces":[{"AssociatePublicIpAddress":true,"DeviceIndex":0,"Ipv6AddressCount":1,"SubnetId":"subnet-7b16de0c"}],"ImageId":"ami-8c1be5f6","InstanceType":"t2.small","TagSpecifications":[{"ResourceType":"instance","Tags":[{"Key":"purpose","Value":"webserver"}]}]}'
